@@ -9,6 +9,12 @@
 <meta property="og:description" content="Uma palestra-show onde a força do entusiasmo ganha vida. Palestrante exclusivo Polo Palestrantes.">
 <meta property="og:type" content="website">
 <link rel="preload" href="assets/fonts/ArticulatCF-Bold.otf" as="font" type="font/otf" crossorigin>
+
+<!-- ==== leadlovers: CSS do design do formulário ==== -->
+<link href="//fonts.googleapis.com/css?family=Roboto:400,300,500,700,900" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="//paginas.rocks/Content/capture/forms/form001.css" />
+<!-- ==== fim leadlovers CSS ==== -->
+
 <link rel="stylesheet" href="css/styles.css?v=1">
 </head>
 <body>
@@ -100,15 +106,43 @@
     </div>
     <div class="form-card">
       <p class="lead">Sem abordagem invasiva. Primeiro entendemos seu contexto e depois indicamos o formato mais adequado.</p>
-      <form action="obrigado.html" method="get" onsubmit="event.preventDefault(); window.location.href='obrigado.html';">
-        <div><label>Nome*</label><input type="text" name="nome" placeholder="Seu nome" required></div>
-        <div><label>E-mail*</label><input type="email" name="email" placeholder="voce@empresa.com" required></div>
-        <div><label>Telefone / WhatsApp*</label><input type="tel" name="telefone" placeholder="(00) 00000-0000" required></div>
-        <div><label>Nome da empresa*</label><input type="text" name="empresa" placeholder="Nome da empresa" required></div>
-        <div class="full"><label>Por que o Murilo Rosa?*</label><textarea name="mensagem" placeholder="Conte sobre o seu evento e por que o Murilo é a escolha certa..." required></textarea></div>
-        <div class="full"><label class="terms"><input type="checkbox" required><span>Concordo com o uso dos meus dados para retorno da Polo sobre esta solicitação, conforme a LGPD.</span></label></div>
-        <div class="full"><button type="submit" class="submit-btn">Contratar Murilo Rosa</button></div>
+      <!-- ==== leadlovers: código do formulário (conectado ao CRM · mid 681453 · fid 77502) ==== -->
+      <form id="llCaptureForm" class="llform001" action="//paginas.rocks/capture" method="post">
+         <input type="hidden" id="mid" name="mid" value="681453" />
+         <input type="hidden" id="fid" name="fid" value="77502" />
+         <input type="hidden" id="formType" name="formType" value="dynamic" />
+         <div>
+             <input type="email" id="llfield89892" name="llfield89892" placeholder="E-mail profissional" aria-label="E-mail profissional" data-required="true" />
+             <div class="field-error" id="llerror89892"></div>
+         </div>
+         <div>
+             <input type="text" id="llfield89894" name="llfield89894" placeholder="Seu nome" aria-label="Seu nome" data-required="true" />
+             <div class="field-error" id="llerror89894"></div>
+         </div>
+         <div>
+             <input type="tel" id="llfield89893" name="llfield89893" placeholder="Telefone com DDD" aria-label="Telefone com DDD" data-required="true" />
+             <div class="field-error" id="llerror89893"></div>
+         </div>
+         <div>
+             <textarea id="llfield89891" name="llfield89891" placeholder="Por que o Murilo Rosa?" aria-label="Por que o Murilo Rosa?"></textarea>
+             <div class="field-error" id="llerror89891"></div>
+         </div>
+         <div class="button-bar">
+             <button type="submit">Contratar Murilo Rosa</button>
+         </div>
+         <p class="form-consent">Ao enviar, você concorda em ser contatado pela equipe da Polo Palestrantes.</p>
+         <div class="loading-box">
+             <img src="//paginas.rocks/content/images/spinner.gif" />
+             <div>loading...</div>
+         </div>
+         <div class="error-box">
+             <img src="//paginas.rocks/content/images/error-icon.png" />
+             <div></div>
+             <button type="button" class="btn" id="btn-error">Ok</button>
+         </div>
+         <img src="https://llimages.com/redirect/redirect.aspx?A=V&f=77502&m=681453" style="display: none;" />
       </form>
+      <!-- ==== fim leadlovers formulário ==== -->
     </div>
   </div>
 </section>
@@ -530,6 +564,10 @@
 </div>
 
 <script src="js/main.js?v=1"></script>
+
+<!-- ==== leadlovers: JS de captura ==== -->
+<script type="text/javascript" src="//paginas.rocks/scripts/capture/capture.js"></script>
+<!-- ==== fim leadlovers JS ==== -->
 
 </body>
 </html>

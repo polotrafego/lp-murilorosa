@@ -376,6 +376,21 @@
   .submit-btn{ width:100%; background:var(--amber); color:#fff; border:none; padding:15px; border-radius:10px; font-weight:800; font-size:15px; margin-top:4px; transition:background .2s ease; }
   .submit-btn:hover{ background:var(--amber-deep); }
 
+  /* ==== formulário do Leadlovers (on-brand) ==== */
+  /* remove o fundo branco do form e o padding duplicado */
+  .form-card .llform001{ background-color:transparent !important; padding:0 !important; box-shadow:none !important; }
+  /* campos: cantos arredondados de 16px, borda sutil da marca */
+  .form-card .llform001 > div > input,
+  .form-card .llform001 > div > select,
+  .form-card .llform001 > div > textarea,
+  .form-card .iti input{ border-radius:16px !important; border:1px solid var(--line) !important; }
+  .form-card .llform001 input,
+  .form-card .llform001 textarea{ font-family:'Articulat CF',sans-serif; }
+  .form-card .llform001 .button-bar{ margin-top:4px; }
+  .form-card .llform001 .button-bar button{ width:100%; background:var(--amber); color:#fff; border:none; padding:15px; border-radius:10px; font-family:'Articulat CF',sans-serif; font-weight:800; font-size:15px; cursor:pointer; transition:background .2s ease; }
+  .form-card .llform001 .button-bar button:hover{ background:var(--amber-deep); }
+  .form-card .llform001 .form-consent{ font-size:11px; color:var(--text-soft); line-height:1.5; margin-top:12px; }
+
   /* frase de fechamento */
   .closing-quote{ padding:70px 0 80px; text-align:center; }
   .closing-quote-text{ font-family:'Articulat CF',sans-serif; font-weight:800; font-size:clamp(24px,3.6vw,42px); line-height:1.28; max-width:820px; margin:0 auto; color:var(--text-dark); }

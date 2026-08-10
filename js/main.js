@@ -1,6 +1,31 @@
 /* Murilo Rosa · O Terceiro Sinal — interações da página */
 
-// player da palestra: carrega o YouTube só ao clicar (usa a thumb como capa)
+// Leadlovers: ao concluir o envio com sucesso, exibe a página de obrigado.
+// (O capture.js redireciona para a URL do painel; este override garante o obrigado.html.)
+(function(){
+    var OrigOpen = XMLHttpRequest.prototype.open;
+    var OrigSend = XMLHttpRequest.prototype.send;
+    XMLHttpRequest.prototype.open = function(method, url){
+      try{ this.__llCapture = (typeof url === 'string' && url.indexOf('capture') !== -1); }catch(e){}
+      return OrigOpen.apply(this, arguments);
+    };
+    XMLHttpRequest.prototype.send = function(){
+      if(this.__llCapture){
+        this.addEventListener('load', function(){
+          try{
+            if(this.status === 200){
+              var txt = this.responseText || '';
+              var hasErrors = /"errors"\s*:\s*\[\s*\{/.test(txt); // erros de validação
+              if(!hasErrors){ window.location.href = 'obrigado.html'; }
+            }
+          }catch(e){}
+        });
+      }
+      return OrigSend.apply(this, arguments);
+    };
+  })();
+
+  // player da palestra: carrega o YouTube só ao clicar (usa a thumb como capa)
 function loadPalestraVideo(){
     const f = document.getElementById('videoFacade');
     if(!f || f.dataset.loaded) return;
