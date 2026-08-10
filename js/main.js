@@ -1,6 +1,18 @@
 /* Murilo Rosa · O Terceiro Sinal — interações da página */
 
-function scrollCarousel(trackId, dir){
+// player da palestra: carrega o YouTube só ao clicar (usa a thumb como capa)
+function loadPalestraVideo(){
+    const f = document.getElementById('videoFacade');
+    if(!f || f.dataset.loaded) return;
+    f.dataset.loaded = '1';
+    f.innerHTML = '<iframe src="https://www.youtube.com/embed/5r4UVE5fuyU?autoplay=1&rel=0" title="O Terceiro Sinal · Murilo Rosa" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>';
+  }
+  (function(){
+    const vf = document.getElementById('videoFacade');
+    if(vf){ vf.addEventListener('keydown', (e)=>{ if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); loadPalestraVideo(); } }); }
+  })();
+
+  function scrollCarousel(trackId, dir){
     const track = document.getElementById(trackId);
     if(!track) return;
     const card = track.querySelector('.photo-card');

@@ -36,12 +36,15 @@ para o endpoint/formulário do Leadlovers e manter o redirect para `obrigado.htm
 
 ## Pendências (aguardando informação)
 
-- **Link do vídeo da palestra:** o botão "Assista ao vídeo" (seção "A palestra")
-  aponta temporariamente para a galeria de fotos (`#depois`). Substituir o `href`
-  do link `#btn-video` pela URL real (YouTube/Vimeo) quando disponível.
 - **WhatsApp:** o botão da página de obrigado usa `5512982506250` (contato Polo do
   kit). Ajustar se o número de atendimento for outro.
 - **Depoimentos de clientes / logos de marcas:** podem ser adicionados quando disponíveis.
+
+## Concluído
+
+- **Vídeo da palestra:** player do YouTube embutido na seção "A palestra"
+  (vídeo `5r4UVE5fuyU`). Para trocar, altere o `src` do `<iframe>` em `index.html`.
+- **Travessões:** removidos de todas as páginas.
 
 ## Deploy no Vercel
 
